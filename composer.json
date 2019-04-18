@@ -1,0 +1,31 @@
+{
+    "name": "swag/cart-change-price",
+    "description": "Example plugin which dynamically changes cart prices",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shopware AG"
+        }
+    ],
+    "require": {
+        "shopware/platform": "dev-master"
+    },
+    "extra": {
+        "shopware-plugin-class": "Swag\\CartChangePrice\\CartChangePrice",
+        "label": {
+            "de-DE": "Beispiel Plugin, welches Warenkorb Preise dynamisch ändert",
+            "en-GB": "Example plugin which dynamically changes cart prices"
+        },
+        "description": {
+            "de-DE": "Beispiel Plugin, welches Warenkorb Preise dynamisch ändert",
+            "en-GB": "Example plugin which dynamically changes cart prices"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Swag\\CartChangePrice\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Swag\CartChangePrice\Cart\Checkout\OverwrittenPrice\OverwrittenPriceEntityDefinition">
+            <tag name="shopware.entity.definition" />
+        </service>
+
+        <service id="Swag\CartChangePrice\Cart\Checkout\OverwrittenPriceCollector">
+            <argument type="service" id="overwritten_price.repository" />
+            <tag name="Shopware\Core\Checkout\Cart\CollectorInterface" />
+        </service>
+    </services>
+</container>
