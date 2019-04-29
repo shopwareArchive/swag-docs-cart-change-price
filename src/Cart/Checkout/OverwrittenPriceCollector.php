@@ -4,6 +4,7 @@ namespace Swag\CartChangePrice\Cart\Checkout;
 
 use Shopware\Core\Checkout\Cart\Cart;
 use Shopware\Core\Checkout\Cart\CartBehavior;
+use Shopware\Core\Checkout\Cart\LineItem\LineItem;
 use Shopware\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -26,10 +27,10 @@ class OverwrittenPriceCollector implements \Shopware\Core\Checkout\Cart\Collecto
 
     public function prepare(StructCollection $definitions, Cart $cart, SalesChannelContext $context, CartBehavior $behavior): void
     {
-        // Simply consider all items in the cart and pass it to the collection
+        // Simply consider all products in the cart and pass it to the collection
         // We do not want to filter for the products from our custom database table here, since database actions are supposed to be done
         // in the `collect` method
-        $definitions->add(new OverwrittenPriceFetchDefinition($cart->getLineItems()->filterGoods()->getKeys()));
+        $definitions->add(new OverwrittenPriceFetchDefinition($cart->getLineItems()->filterType(LineItem::PRODUCT_LINE_ITEM_TYPE)->getKeys()));
     }
 
     public function collect(StructCollection $fetchDefinitions, StructCollection $data, Cart $cart, SalesChannelContext $context, CartBehavior $behavior): void
