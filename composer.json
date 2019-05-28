@@ -15,12 +15,12 @@
     "extra": {
         "shopware-plugin-class": "Swag\\CartChangePrice\\CartChangePrice",
         "label": {
-            "de-DE": "Beispiel Plugin, welches Warenkorb Preise dynamisch ändert",
-            "en-GB": "Example plugin which dynamically changes cart prices"
+            "de-DE": "Label für das Plugin CartChangePrice",
+            "en-GB": "Label for the plugin CartChangePrice"
         },
         "description": {
-            "de-DE": "Beispiel Plugin, welches Warenkorb Preise dynamisch ändert",
-            "en-GB": "Example plugin which dynamically changes cart prices"
+            "de-DE": "Beschreibung für das Plugin CartChangePrice",
+            "en-GB": "Description for the plugin CartChangePrice"
         }
     },
     "autoload": {
