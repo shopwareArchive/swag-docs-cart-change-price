@@ -11,7 +11,11 @@
 
         <service id="Swag\CartChangePrice\Cart\Checkout\OverwrittenPriceCollector">
             <argument type="service" id="overwritten_price.repository" />
-            <tag name="shopware.cart.collector" />
+            <argument type="service" id="Shopware\Core\Checkout\Cart\Price\QuantityPriceCalculator"/>
+
+            <!-- after product collector/processor -->
+            <tag name="shopware.cart.processor" priority="4500" />
+            <tag name="shopware.cart.collector" priority="4500" />
         </service>
     </services>
 </container>
